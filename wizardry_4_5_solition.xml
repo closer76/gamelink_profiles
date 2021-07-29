@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gamelink>
+
+    <card
+        title="WIZARDRY: NEW AGE OF LLYLGAMYN"
+        short="WIZARDRY IV-V"
+        titlelo="Wizardry: New Age of Llylgamyn"
+        beta="true"
+		rev="0"
+   />
+
+    <author><![CDATA[Closer]]></author>
+
+	<libretro>
+
+		<detect system="PS1">
+
+			<content_hash>d8cd14c28687b7f8e21e05b887c902b17dc509b2ad59d67ad92747d19cbaf6d3</content_hash>
+
+			<peek bytes="c21c8 c21d0 b86bd c21d4" />
+
+		</detect>
+
+	</libretro>
+
+
+    <regions>
+
+	<region id="1" name="Level 1" ground_floor="false" start_floor="B1" auto_create="true" >
+            <grid width="31" height="39">
+                <origin x="0" y="-8" />
+            </grid>
+        </region>
+
+        <region id="2" name="Level 2" ground_floor="false" start_floor="B2" auto_create="false" >
+            <grid width="32" height="31">
+                <origin x="-17" y="-16" />
+            </grid>
+        </region>
+
+        <region id="3" name="Level 3" ground_floor="false" start_floor="B3" auto_create="false" >
+            <grid width="31" height="40">
+                <origin x="-3" y="-29" />
+            </grid>
+        </region>
+
+        <region id="4" name="Level 4" ground_floor="false" start_floor="B4" auto_create="false" >
+            <grid width="73" height="40">
+                <origin x="-18" y="-35" />
+            </grid>
+        </region>
+
+        <region id="5" name="Level 5" ground_floor="false" start_floor="B5" auto_create="false" >
+            <grid width="40" height="56">
+                <origin x="-24" y="-32" />
+            </grid>
+        </region>
+
+        <region id="6" name="Level 6" ground_floor="false" start_floor="B6" auto_create="false" >
+            <grid width="41" height="38">
+                <origin x="-15" y="-34" />
+            </grid>
+        </region>
+
+        <region id="7" name="Level 7" ground_floor="false" start_floor="B7" auto_create="false" >
+            <grid width="32" height="32">
+                <origin x="-16" y="-16" />
+            </grid>
+        </region>
+
+        <region id="9" name="Level 777 TL" ground_floor="false" start_floor="B8" auto_create="false" >
+            <grid width="22" height="16">
+                <origin x="18" y="85" />
+            </grid>
+        </region>
+
+        <region id="10" name="Level 777 TR" ground_floor="false" start_floor="B8" auto_create="false" >
+            <grid width="16" height="11">
+                <origin x="-76" y="-69" />
+            </grid>
+        </region>
+
+        <region id="11" name="Level 777 BL" ground_floor="false" start_floor="B8" auto_create="false" >
+            <grid width="12" height="16">
+                <origin x="-120" y="-116" />
+            </grid>
+        </region>
+
+        <region id="8" name="Level 8" ground_floor="false" start_floor="B8" auto_create="false" >
+            <grid width="23" height="23">
+                <origin x="-11" y="-11" />
+            </grid>
+        </region>
+
+        <region id="12" name="Lala Moo-Moo" ground_floor="false" start_floor="B1" auto_create="false" >
+            <grid width="7" height="7">
+                <origin x="-108" y="-108" />
+            </grid>
+        </region>
+
+    </regions>
+
+    <views>
+
+        <!-- CLASSES -->
+
+        <class name="base">
+            <face offset="2" length="1" n="10" e="c" s="8" w="4" />
+         </class>
+
+        <!-- VIEWS -->
+
+	<!-- Level 1 X-Positive & Y-Positive Part -->
+	<packetview extends="base" region="1">
+		<xpos offset="0" length="1" min="0" max="1e" />
+		<ypos offset="1" length="1" min="0" max="1e" />
+		<check offset="3" length="1" value="1" />
+		<move x="0" y="-8"/>
+		<const_floor>B1</const_floor>
+	</packetview>
+
+	<!-- Level 1 X-Positive & Y-Negative Part -->
+	<packetview extends="base" region="1">
+		<xpos offset="0" length="1" min="0" max="1e" />
+		<ypos offset="1" length="1" min="f8" max="ff" />
+		<check offset="3" length="1" value="1" />
+		<move x="0" y="248"/>
+		<const_floor>B1</const_floor>
+	</packetview>
+
+	<!-- Level 2 X-Positive & Y-Positive Part -->
+	<packetview extends="base" region="2">
+		<xpos offset="0" length="1" min="0" max="e" />
+		<ypos offset="1" length="1" min="0" max="e" />
+		<check offset="3" length="1" value="2" />
+		<move x="17" y="-16"/>
+		<const_floor>B2</const_floor>
+	</packetview>
+
+	<!-- Level 2 X-Positive & Y-Negative Part -->
+	<packetview extends="base" region="2">
+		<xpos offset="0" length="1" min="0" max="e" />
+		<ypos offset="1" length="1" min="f0" max="ff" />
+		<check offset="3" length="1" value="2" />
+		<move x="17" y="240"/>
+		<const_floor>B2</const_floor>
+	</packetview>
+
+	<!-- Level 2 X-Negative & Y-Positive Part -->
+	<packetview extends="base" region="2">
+		<xpos offset="0" length="1" min="ef" max="ff" />
+		<ypos offset="1" length="1" min="0" max="e" />
+		<check offset="3" length="1" value="2" />
+		<move x="-239" y="-16"/>
+		<const_floor>B2</const_floor>
+	</packetview>
+
+	<!-- Level 2 X-Negative & Y-Negative Part -->
+	<packetview extends="base" region="2">
+		<xpos offset="0" length="1" min="ef" max="ff" />
+		<ypos offset="1" length="1" min="f0" max="ff" />
+		<check offset="3" length="1" value="2" />
+		<move x="-239" y="240"/>
+		<const_floor>B2</const_floor>
+	</packetview>
+
+	<!-- Level 3 X-Positive & Y-Positive Part -->
+	<packetview extends="base" region="3">
+		<xpos offset="0" length="1" min="0" max="1b" />
+		<ypos offset="1" length="1" min="0" max="a" />
+		<check offset="3" length="1" value="3" />
+		<move x="3" y="-29"/>
+		<const_floor>B3</const_floor>
+	</packetview>
+
+	<!-- Level 3 X-Positive & Y-Negative Part -->
+	<packetview extends="base" region="3">
+		<xpos offset="0" length="1" min="0" max="1b" />
+		<ypos offset="1" length="1" min="e3" max="ff" />
+		<check offset="3" length="1" value="3" />
+		<move x="3" y="227"/>
+		<const_floor>B3</const_floor>
+	</packetview>
+
+	<!-- Level 3 X-Negative & Y-Positive Part -->
+	<packetview extends="base" region="3">
+		<xpos offset="0" length="1" min="fd" max="ff" />
+		<ypos offset="1" length="1" min="0" max="a" />
+		<check offset="3" length="1" value="3" />
+		<move x="-253" y="-29"/>
+		<const_floor>B3</const_floor>
+	</packetview>
+
+	<!-- Level 3 X-Negative & Y-Negative Part -->
+	<packetview extends="base" region="3">
+		<xpos offset="0" length="1" min="fd" max="ff" />
+		<ypos offset="1" length="1" min="e3" max="ff" />
+		<check offset="3" length="1" value="3" />
+		<move x="-253" y="227"/>
+		<const_floor>B3</const_floor>
+	</packetview>
+
+	<!-- Level 4 X-Positive & Y-Positive Part -->
+	<packetview extends="base" region="4">
+		<xpos offset="0" length="1" min="0" max="36" />
+		<ypos offset="1" length="1" min="0" max="4" />
+		<check offset="3" length="1" value="4" />
+		<move x="18" y="-35"/>
+		<const_floor>B4</const_floor>
+	</packetview>
+
+	<!-- Level 4 X-Positive & Y-Negative Part -->
+	<packetview extends="base" region="4">
+		<xpos offset="0" length="1" min="0" max="36" />
+		<ypos offset="1" length="1" min="dd" max="ff" />
+		<check offset="3" length="1" value="4" />
+		<move x="18" y="221"/>
+		<const_floor>B4</const_floor>
+	</packetview>
+
+	<!-- Level 4 X-Negative & Y-Positive Part -->
+	<packetview extends="base" region="4">
+		<xpos offset="0" length="1" min="ee" max="ff" />
+		<ypos offset="1" length="1" min="0" max="4" />
+		<check offset="3" length="1" value="4" />
+		<move x="-238" y="-35"/>
+		<const_floor>B4</const_floor>
+	</packetview>
+
+	<!-- Level 4 X-Negative & Y-Negative Part -->
+	<packetview extends="base" region="4">
+		<xpos offset="0" length="1" min="ee" max="ff" />
+		<ypos offset="1" length="1" min="dd" max="ff" />
+		<check offset="3" length="1" value="4" />
+		<move x="-238" y="221"/>
+		<const_floor>B4</const_floor>
+	</packetview>
+
+	<!-- Level 5 X-Positive & Y-Positive Part -->
+	<packetview extends="base" region="5">
+		<xpos offset="0" length="1" min="0" max="f" />
+		<ypos offset="1" length="1" min="0" max="17" />
+		<check offset="3" length="1" value="5" />
+		<move x="24" y="-32"/>
+		<const_floor>B5</const_floor>
+	</packetview>
+
+	<!-- Level 5 X-Positive & Y-Negative Part -->
+	<packetview extends="base" region="5">
+		<xpos offset="0" length="1" min="0" max="f" />
+		<ypos offset="1" length="1" min="e0" max="ff" />
+		<check offset="3" length="1" value="5" />
+		<move x="24" y="224"/>
+		<const_floor>B5</const_floor>
+	</packetview>
+
+	<!-- Level 5 X-Negative & Y-Positive Part -->
+	<packetview extends="base" region="5">
+		<xpos offset="0" length="1" min="e8" max="ff" />
+		<ypos offset="1" length="1" min="0" max="17" />
+		<check offset="3" length="1" value="5" />
+		<move x="-232" y="-32"/>
+		<const_floor>B5</const_floor>
+	</packetview>
+
+	<!-- Level 5 X-Negative & Y-Negative Part -->
+	<packetview extends="base" region="5">
+		<xpos offset="0" length="1" min="e8" max="ff" />
+		<ypos offset="1" length="1" min="e0" max="ff" />
+		<check offset="3" length="1" value="5" />
+		<move x="-232" y="224"/>
+		<const_floor>B5</const_floor>
+	</packetview>
+
+	<!-- Level 6 X-Positive & Y-Positive Part -->
+	<packetview extends="base" region="6">
+		<xpos offset="0" length="1" min="0" max="19" />
+		<ypos offset="1" length="1" min="0" max="3" />
+		<check offset="3" length="1" value="6" />
+		<move x="15" y="-34"/>
+		<const_floor>B6</const_floor>
+	</packetview>
+
+	<!-- Level 6 X-Positive & Y-Negative Part -->
+	<packetview extends="base" region="6">
+		<xpos offset="0" length="1" min="0" max="19" />
+		<ypos offset="1" length="1" min="de" max="ff" />
+		<check offset="3" length="1" value="6" />
+		<move x="15" y="222"/>
+		<const_floor>B6</const_floor>
+	</packetview>
+
+	<!-- Level 6 X-Negative & Y-Positive Part -->
+	<packetview extends="base" region="6">
+		<xpos offset="0" length="1" min="f1" max="ff" />
+		<ypos offset="1" length="1" min="0" max="3" />
+		<check offset="3" length="1" value="6" />
+		<move x="-241" y="-34"/>
+		<const_floor>B6</const_floor>
+	</packetview>
+
+	<!-- Level 6 X-Negative & Y-Negative Part -->
+	<packetview extends="base" region="6">
+		<xpos offset="0" length="1" min="f1" max="ff" />
+		<ypos offset="1" length="1" min="de" max="ff" />
+		<check offset="3" length="1" value="6" />
+		<move x="-241" y="222"/>
+		<const_floor>B6</const_floor>
+	</packetview>
+
+	<!-- Level 7 X-Positive & Y-Positive Part -->
+	<packetview extends="base" region="7">
+		<xpos offset="0" length="1" min="0" max="f" />
+		<ypos offset="1" length="1" min="0" max="f" />
+		<check offset="3" length="1" value="7" />
+		<move x="16" y="-16"/>
+		<const_floor>B7</const_floor>
+	</packetview>
+
+	<!-- Level 7 X-Positive & Y-Negative Part -->
+	<packetview extends="base" region="7">
+		<xpos offset="0" length="1" min="0" max="f" />
+		<ypos offset="1" length="1" min="f0" max="ff" />
+		<check offset="3" length="1" value="7" />
+		<move x="16" y="240"/>
+		<const_floor>B7</const_floor>
+	</packetview>
+
+	<!-- Level 7 X-Negative & Y-Positive Part -->
+	<packetview extends="base" region="7">
+		<xpos offset="0" length="1" min="f0" max="ff" />
+		<ypos offset="1" length="1" min="0" max="f" />
+		<check offset="3" length="1" value="7" />
+		<move x="-240" y="-16"/>
+		<const_floor>B7</const_floor>
+	</packetview>
+
+	<!-- Level 7 X-Negative & Y-Negative Part -->
+	<packetview extends="base" region="7">
+		<xpos offset="0" length="1" min="f0" max="ff" />
+		<ypos offset="1" length="1" min="f0" max="ff" />
+		<check offset="3" length="1" value="7" />
+		<move x="-240" y="240"/>
+		<const_floor>B7</const_floor>
+	</packetview>
+
+	<!-- Level 777 TL -->
+	<packetview region="9" extends="base">
+		<xpos offset="0" length="1" min="12" max="27" />
+		<ypos offset="1" length="1" min="55" max="64" />
+		<check offset="3" length="1" value="8" />
+		<move x="-18" y="85"/>
+		<const_floor>B8</const_floor>
+	</packetview>
+
+	<!-- Level 777 TR -->
+	<packetview region="10" extends="base">
+		<xpos offset="0" length="1" min="4c" max="5b" />
+		<ypos offset="1" length="1" min="bb" max="c5" />
+		<check offset="3" length="1" value="8" />
+		<move x="-76" y="187"/>
+		<const_floor>B8</const_floor>
+	</packetview>
+
+	<!-- Level 777 BL -->
+	<packetview region="11" extends="base">
+		<xpos offset="0" length="1" min="88" max="97" />
+		<ypos offset="1" length="1" min="8c" max="9b" />
+		<check offset="3" length="1" value="8" />
+		<move x="-136" y="140"/>
+		<const_floor>B8</const_floor>
+	</packetview>
+
+	<!-- Level 8 X-Positive & Y-Positive Part -->
+	<packetview extends="base" region="8">
+		<xpos offset="0" length="1" min="0" max="b" />
+		<ypos offset="1" length="1" min="0" max="b" />
+		<check offset="3" length="1" value="8" />
+		<move x="11" y="-11"/>
+		<const_floor>B8</const_floor>
+	</packetview>
+
+	<!-- Level 8 X-Positive & Y-Negative Part -->
+	<packetview extends="base" region="8">
+		<xpos offset="0" length="1" min="0" max="b" />
+		<ypos offset="1" length="1" min="f5" max="ff" />
+		<check offset="3" length="1" value="8" />
+		<move x="11" y="245"/>
+		<const_floor>B8</const_floor>
+	</packetview>
+
+	<!-- Level 8 X-Negative & Y-Positive Part -->
+	<packetview extends="base" region="8">
+		<xpos offset="0" length="1" min="f5" max="ff" />
+		<ypos offset="1" length="1" min="0" max="b" />
+		<check offset="3" length="1" value="8" />
+		<move x="-245" y="-11"/>
+		<const_floor>B8</const_floor>
+	</packetview>
+
+	<!-- Level 8 X-Negative & Y-Negative Part -->
+	<packetview extends="base" region="8">
+		<xpos offset="0" length="1" min="f5" max="ff" />
+		<ypos offset="1" length="1" min="f5" max="ff" />
+		<check offset="3" length="1" value="8" />
+		<move x="-245" y="245"/>
+		<const_floor>B8</const_floor>
+        </packetview>
+
+	<!-- Level Lala Moo-Moo -->
+	<packetview region="12" extends="base">
+		<xpos offset="0" length="1" min="94" max="9a" />
+		<ypos offset="1" length="1" min="94" max="9a" />
+		<check offset="3" length="1" value="1" />
+		<move x="-148" y="148" />
+		<const_floor>B1</const_floor>
+	</packetview>
+
+    </views>
+
+</gamelink>
